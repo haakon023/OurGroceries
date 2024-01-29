@@ -32,7 +32,7 @@ export default function ProductsList({ navigation }) {
             [
                 {
                     id: "asiudhasdasd",
-                    title: "Norvegie Ost",
+                    title: "Norvegia Ost",
                     cost: 100,
                     imageUrl: "https://reactjs.org/logo-og.png"
                 },
@@ -108,15 +108,16 @@ export default function ProductsList({ navigation }) {
             </Pressable>
 
             <Modal
+                transparent={true}
                 animationType="slide"
                 visible={productModal.show}
-                presentationStyle='formSheet'
-                style={styles.modal}
+                presentationStyle='pageSheet'
                 onRequestClose={() => {
                     setProductModal({ show: !productModal.show, data: null });
                 }}>
+                   
 
-                <GroceryDetails data={productModal.data}>
+                <GroceryDetails style={styles.modal} data={productModal.data}>
 
                 </GroceryDetails>
 
@@ -139,6 +140,6 @@ export default function ProductsList({ navigation }) {
 const styles = StyleSheet.create({
     modal: {
       top: '50%',
-      height: '50%'
-    }
+      margin:'auto',
+    },
   });
